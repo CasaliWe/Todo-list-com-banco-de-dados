@@ -22,10 +22,20 @@ const firebaseConfig = {
 //Verificar o login salvo no local storage
 function loadLogin(){
       if(JSON.parse(localStorage.getItem('login'))){
+           document.getElementById('container-index').style.display = 'none' 
            var loginStorage = JSON.parse(localStorage.getItem('login'))
-           document.getElementById('user').value = loginStorage.user
-           document.getElementById('senha').value = loginStorage.senha
-               logar();
+           db.collection('users').get()
+           .then(snapshot => {
+                     snapshot.docs.forEach(doc => {
+                           if(doc.data().user == loginStorage.user && doc.data().senha == loginStorage.senha){
+                                  logado(doc.data().user);
+                                  userBanco = doc.data().user
+                           } 
+                     });
+           })
+           .catch(()=>{
+                  alert('Erro! Usuário não encontrado.') 
+           })
       } 
 }
 
@@ -141,7 +151,6 @@ function  atualizarBanco(user){
 //Função para excluir a tarefa
 function deletar(i){
     var textoDeletar =  document.getElementById(`${i}`).textContent 
-    document.getElementById(`${i}pai`).remove()
     
     var listaAnota = []
 
@@ -159,6 +168,10 @@ function deletar(i){
             }
         })
     }, 500);
+
+    setTimeout(() => {
+        document.getElementById(`${i}pai`).remove()
+    }, 600);
    
     atualizarBanco(userBanco);
 }
@@ -277,7 +290,11 @@ function horarioAtual(){
 
 //Após logar, todo o código do app se encontrará aqui!
 function  logado(usuario){
+
+    //TUDO QUE FOR COLOCADO AQUI VAI SER ATIVADO LOGO NA INICIALIZAÇÃO DO APP
         
+
+
     //Ocultar login, mostrar app
     document.getElementById('container-index').style.display = 'none' //Ocultando login
     document.getElementById('app').style.display = 'block'  //Mostrando App
@@ -349,7 +366,7 @@ function  logado(usuario){
           atualizarBanco(usuario);
           setTimeout(() => {
              atualizarLista(usuario);
-          }, 200);
+          }, 150);
         }
     })
 
