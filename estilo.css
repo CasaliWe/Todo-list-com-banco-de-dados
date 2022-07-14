@@ -400,7 +400,7 @@ footer {
 
 @media (max-width: 700px){ 
     #container-index {
-        padding-top: 30px;
+        padding-top: 70px;
         display: flex;
         justify-content: start;
         align-items: center;
@@ -413,7 +413,7 @@ footer {
 
 
     #container-CriarConta {
-        padding-top: 30px;
+        padding-top: 70px;
         display: flex;
         justify-content:start;
         align-items: center;
