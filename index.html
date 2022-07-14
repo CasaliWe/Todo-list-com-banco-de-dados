@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+    <title>Anotações</title>
+</head>
+<body onload="loadLogin()">
+     
+                   
+         
+        <main id="container-index">      
+                <h1>Anotações <i class="fas fa-tasks" style="color: gold;"></i></h1>    
+
+            
+                <form action="">
+                    <div class="input-single">
+                        <input required type="text" id="user" class="input">
+                        <label for="user">Usuário</label>
+                    </div>
+                    <div class="input-single">
+                        <input required type="password" id="senha" class="input">
+                        <label for="senha">Senha</label>
+                    </div>
+
+                    <a href="#" onclick="logar()" id="btn-logar">Logar <i id="btn-logar-load"></i></a>
+
+                </form> 
+                
+                <p id="aviso"></p>
+                
+                <p>Deseja criar uma conta? <a href="criarConta.html">Criar conta</a></p>
+
+        </main>
+
+
+
+
+         
+        <div id="app"><!--Onde se encontra todo o html do app-->
+               
+            <div id="head">
+                <button onclick="deslogar()" id="btn-sair">Sair <i class="fas fa-sign-out-alt"></i></button>
+                <span id="bomDia">Bom dia!</span> <span id="nome-title"></span>
+            </div>       
+                    
+                      
+            <div id="conteudo">
+                  <div id="add-tarefa">
+                        <input type="text" id="tarefa" placeholder="O que vamos fazer hoje?">
+                        <select id="importancia">
+                             <option value="white">- Importância -</option>
+                             <option value="yellow">Amarelo</option>
+                             <option value="red">Vermelho</option>
+                             <option value="black">Preto</option>
+                        </select>
+                        <button id="btn-tarefa">Adicionar +</button>
+                  </div>
+                    
+                  <button id="atualizar-lista" onclick="window.location.reload()">Atualizar lista</button>
+               
+                  <div id="lista-tarefas">
+                             
+                  </div>
+
+            </div>
+
+        </div><!--Onde se encontra todo o html do app-->
+
+
+
+        <footer>Copyright © 2022 Weslei Casali</footer>
+      
+
+ 
+
+
+
+
+
+
+
+
+
+
+         
+
+    <script src="app.js"></script>
+</body>
+</html>

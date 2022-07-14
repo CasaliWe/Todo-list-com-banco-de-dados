@@ -1,0 +1,490 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/*-------------------Login--------------------*/
+
+/*Container da file index*/
+#container-index {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       width: 100%;
+       text-align: center;
+       flex-direction: column;
+       position: relative;
+}
+
+
+
+
+/*form para login*/
+#container-index h1{
+    color: rgba(0, 0, 0, 0.815);
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+
+#container-index form { 
+    padding:2px 45px 30px 45px;
+    border: 1px solid rgba(0, 0, 0, 0.205);
+    border-radius: 10px;
+}
+
+
+.input-single {
+    margin: 50px 0;
+    position: relative;
+}
+
+.input-single label {
+    color: rgba(0, 0, 0, 0.815);
+    font-size: 16px;
+    position:absolute ;
+    top: 0px;
+    left: 5px;
+    cursor: text;
+    transition: 0.8s ease-in-out;
+}
+
+.input {
+    width: 100%;
+    padding: 5px;
+    color: rgb(150, 150, 150);
+    border: 0;
+    border-bottom: 2px solid gold;
+    outline: 0 ;
+}
+
+
+.input:focus , .input:valid {
+    border-bottom: 2px solid gold;
+}
+
+.input:focus ~ label , .input:valid ~ label {
+   transform: translateY(-18px);
+   font-size: 14px;
+   color:gold ;
+}
+
+#container-index form #btn-logar {
+       color: rgba(0, 0, 0, 0.815);
+       background-color: gold;
+       border: 1px solid transparent;
+       border-radius: 5px;
+       padding: 5px 50px;
+       text-decoration: none;
+       cursor: pointer;
+}
+
+
+#container-index p {
+      color: black;
+      font-size: 13px;
+      margin-top: 15px;
+}
+
+#container-index p a {
+    color: black;
+    background-color: gold;
+    padding: 5px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+
+.anima {
+     font-size: 13px;
+     animation: gira 1s infinite;
+}
+
+@keyframes gira {
+       0%{transform: rotate(0deg);}
+       40%{transform: rotate(180deg);}
+       70%{transform: rotate(180deg);}
+       100%{transform: rotate(0deg);}
+}
+
+
+#container-index #aviso{
+      color: red;
+      font-size: 15px;
+      margin: 5px;
+      display: none;
+}
+
+#container-CriarConta #aviso{
+    color: red;
+    font-size: 15px;
+    margin-top: 20px;
+    display: none; 
+}
+
+
+/*Footer login*/
+footer {
+       position: absolute;
+       bottom: 20px;
+       font-size: 12px;
+       color: rgba(0, 0, 0, 0.637);
+       width: 100%;
+       text-align: center;
+}
+
+
+/*-------------------Login--------------------*/
+
+
+
+
+/*-------------------Criar Conta--------------------*/
+
+#container-CriarConta {
+       display: flex;
+       justify-content:center;
+       align-items: center;
+       height: 100vh;
+       flex-direction: column;
+}
+
+#container-CriarConta h1 {
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.842);
+}
+
+
+#container-CriarConta #btn-criar {
+    color: rgba(0, 0, 0, 0.815);
+    background-color: gold;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*-------------------Criar Conta--------------------*/
+
+
+
+
+
+
+
+
+
+/*---------------------------APP--------------------------*/
+#app{
+     display: none;
+}
+
+#head{
+     background-color: rgba(0, 0, 0, 0.671);
+     padding: 10px;
+     color: white;
+     position: relative;
+     text-align: center;
+     margin-top: 20px;
+}
+
+#btn-sair{
+      position: absolute;
+      top: 15%;
+      left: 20px;
+      color: white;
+      padding: 5px;
+      background-color: transparent;
+      border: 1px solid transparent;
+      font-size: 16px;
+      cursor: pointer;
+}
+
+#btn-sair:hover{
+    color: gold;
+}
+
+#bomDia{
+      font-size: 22px;
+}
+
+#nome-title{
+     color: gold;
+     font-size: 22px;
+}
+
+
+#conteudo{
+     width: 70%;
+     margin: 15px auto;
+     max-height: 450px;
+     overflow: hidden;
+     padding: 10px;
+     text-align: center;
+}
+
+#add-tarefa{
+     border: 1px solid transparent;
+     background-color: rgba(0, 0, 0, 0.671);
+     border-radius: 5px;
+     padding: 10px;
+     color: white;
+}
+
+#tarefa{
+     border-radius: 5px;
+     border: 1px solid transparent;
+     padding: 5px 5px 5px 10px;
+     width: 55%;
+}
+
+#importancia{
+      margin: 5px;
+      color: white;
+      border: 1px solid white;
+      background-color: transparent;
+      border-radius: 5px;
+      padding: 5px;
+}
+
+#importancia option:nth-child(1){
+    color: black;
+}
+
+#importancia option:nth-child(2){
+    color: black;
+    background-color: yellow;
+}
+
+#importancia option:nth-child(3){
+    color: white;
+    background-color: red;
+}
+
+#importancia option:nth-child(4){
+    color: white;
+    background-color: black;
+}
+
+#btn-tarefa{
+     color: gold;
+     border: 1px solid gold;
+     background-color: transparent;
+     padding: 7px;
+     border-radius: 5px;
+     cursor: pointer;
+}
+
+.btnAddAnimation{
+      animation: btnAdd 2s infinite;
+}
+
+@keyframes btnAdd {
+      0%{background-color: gold; color: white;}
+      50%{background-color: gold; color:black;}
+      100%{background-color: gold; color: white;}
+}
+
+#lista-tarefas{
+      border: 1px solid rgba(0, 0, 0, 0.185);
+      margin-top: 10px;
+      border-radius: 3px;
+      padding: 15px;
+      overflow: auto;
+      height: 320px;
+}
+
+#lista-tarefas div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;  
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.795);
+}
+
+
+#lista-tarefas span {
+       width: 20px;
+       height: 20px;
+       background-color: red;
+       align-self: center;
+       margin-right: 5px;
+}
+
+#lista-tarefas p{
+    text-align: start;
+    width: 80%;
+    padding: 5px;
+    padding-left: 5px;
+    color: white;
+    align-self: center;
+    word-break: keep-all;
+    cursor: pointer;
+}
+
+#lista-tarefas a{
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.301);
+    margin: 7px 7px 7px 12px;
+    cursor: pointer;
+    align-self: center;
+}
+
+#lista-tarefas button{
+    background-color: transparent;
+    border: transparent;
+    background-image: linear-gradient(to right, #3bd9d9, #b527cf);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 7px 7px 7px 12px;
+    cursor: pointer;
+}
+
+#lista-tarefas button:hover{
+    color: gold;
+}
+
+#lista-tarefas h6{
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    padding: 5px;
+    color:rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#lista-tarefas input{
+    text-align: start;
+    width: 85%;
+    padding: 5px;
+    padding-left: 20px;
+    color:gold;
+    background-color: transparent;
+    border: transparent;
+}
+
+#atualizar-lista{
+    border: 1px solid #3bd9d9;
+    padding: 5px 10px;
+    color: #3bd9d9;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: btnAtualizar 500ms infinite normal;
+}
+
+@keyframes btnAtualizar {
+  from {transform: scale(1.0);}
+  to {transform: scale(1.1);}
+}
+
+
+/*---------------------------APP--------------------------*/
+
+
+
+
+/*---------------------MOBILE--------------------------*/
+
+
+@media (max-width: 700px){ 
+   #head{
+        padding: 5px;
+        margin-top: 15px;
+   }
+   
+   #btn-sair{
+         top: 10%;
+         left: 12px;
+         font-size: 14px;
+   }
+   
+   #btn-sair:hover{
+       color: gold;
+   }
+   
+   #bomDia{
+         font-size: 18px;
+   }
+   
+   #nome-title{
+        font-size: 18px;
+   }
+   
+   
+   #conteudo{
+        width: 98%;
+        max-height: 550px;
+   }
+   
+   #add-tarefa{
+       
+   }
+   
+   #tarefa{
+        margin-bottom: 5px;
+        width: 90%;
+   }
+   
+   #importancia{
+         
+   }
+   
+   #btn-tarefa{
+     
+   }
+
+   
+   #lista-tarefas{
+         height: 400px;
+   }
+   
+   #lista-tarefas div{
+       
+   }
+   
+   
+   #lista-tarefas span {
+          width: 20px;
+          height: 15px;
+   }
+   
+   #lista-tarefas p{
+       width: 75%;
+       word-break: keep-all;
+       font-size: 13px;
+   }
+   
+   #lista-tarefas a{
+       font-size: 9px;
+   }
+   
+   #lista-tarefas button{
+       font-size: 12px;
+       margin: 5px;
+   }
+   
+   #lista-tarefas h6{
+       font-size: 13px;
+       width: 90%;
+   }
+   
+   #lista-tarefas input{
+       
+   }
+   
+   #atualizar-lista{
+       
+   }
+}

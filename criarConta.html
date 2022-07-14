@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+    <title>Anotações</title>
+</head>
+<body>
+     
+                   
+         
+        <main id="container-CriarConta">
+             <h1>Crie sua conta</h1>
+             <form action="">
+                <div class="input-single">
+                    <input required type="text" id="nome" class="input">
+                    <label for="nome">Seu nome</label>
+                </div>
+                <div class="input-single">
+                    <input required type="text" id="user" class="input">
+                    <label for="user">Usuário</label>
+                </div>
+                <div class="input-single">
+                    <input required type="password" id="senha" class="input">
+                    <label for="senha">Senha</label>
+                </div>
+
+                <a href="#" onclick="criarConta()" id="btn-criar">Cria conta <i id="btn-logar-load2"></i></a>
+                
+            </form>  
+                 
+            <p id="aviso"></p>
+
+        </main>
+
+        <footer>Copyright © 2022 Weslei Casali</footer>
+      
+
+ 
+
+
+
+
+
+
+
+
+
+
+         
+
+    <script src="app.js"></script>
+</body>
+</html>
