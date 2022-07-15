@@ -187,8 +187,12 @@ function deletar(i){
         })
     }, 500);
 
+
     setTimeout(() => {
         document.getElementById(`${i}pai`).remove()
+        var qtsBanco = JSON.parse(localStorage.getItem('qtsTarefas')) -1
+        document.querySelector('#qtsTarefas > span').textContent =  qtsBanco
+        numeroTarefas(userBanco);
     }, 600);
    
     atualizarBanco(userBanco);
@@ -304,6 +308,27 @@ function horarioAtual(){
 
 
 
+//Contagem do número de tarefas
+function numeroTarefas(user){
+    var t = ''
+
+    db.collection('users').get().then(snapshot => {
+              snapshot.docs.forEach(doc => {
+                    if(doc.data().user == user){
+                         t = doc.data().tarefas
+                    }
+              });
+    })
+
+
+    setTimeout(() => {
+         document.querySelector('#qtsTarefas > span').textContent =  t.length
+         localStorage.setItem('qtsTarefas', JSON.stringify(t.length))
+    }, 500);
+}
+
+
+
 //------------------------------------------------------------------------
 
 //Após logar, todo o código do app se encontrará aqui!
@@ -353,6 +378,11 @@ function  logado(usuario){
     document.getElementById('tarefa').addEventListener('focusout', ()=>{
         document.getElementById('btn-tarefa').classList.remove('btnAddAnimation')
     })
+
+
+
+    //Chamando a contagem de tarefas
+    numeroTarefas(usuario);
      
     
 
@@ -384,6 +414,7 @@ function  logado(usuario){
           atualizarBanco(usuario);
           setTimeout(() => {
              atualizarLista(usuario);
+             numeroTarefas(usuario);
           }, 150);
         }
     })
