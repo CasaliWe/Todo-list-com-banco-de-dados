@@ -26,8 +26,9 @@
                     <label for="user">Usuário</label>
                 </div>
                 <div class="input-single">
-                    <input required type="password" id="senha" class="input">
+                    <input required type="password" id="senha" class="input" onkeyup="verificarSenha()">
                     <label for="senha">Senha</label>
+                    <p style="margin-top: 5px; text-align: center;" id="senhaForte"></p>
                 </div>
 
                 <a href="#" onclick="criarConta()" id="btn-criar">Cria conta <i id="btn-logar-load2"></i></a>

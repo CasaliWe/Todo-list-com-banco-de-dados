@@ -91,8 +91,8 @@ function criarConta(){
         tarefas: [],
     }
 
-    if(login.nome == '' || login.user == '' || login.senha == ''){
-           alert('Preencha todos os campos!')
+    if(login.nome == '' || login.user == '' || login.senha == '' || login.senha.length <= 4){
+           alert('Confira os campos e tente novamente!')
            window.location.href = "criarConta.html"
     }
 
@@ -127,6 +127,24 @@ function criarConta(){
     }, 1500);
       
 }
+
+
+
+//Verificar senha forte
+function verificarSenha(){
+    var senhaTamanho = document.getElementById('senha').value
+      if(senhaTamanho.length <= 4){
+            document.getElementById('senhaForte').textContent = 'Senha fraca!'
+            document.getElementById('senhaForte').style.color = 'red'
+      } else if(senhaTamanho.length <= 7){
+            document.getElementById('senhaForte').textContent = 'Senha média!'
+            document.getElementById('senhaForte').style.color = 'blue'
+      } else {
+            document.getElementById('senhaForte').textContent = 'Senha ok!'
+            document.getElementById('senhaForte').style.color = 'green'
+      } 
+}
+
 
 
 
@@ -304,7 +322,7 @@ function  logado(usuario){
     .then(snapshot => {
               snapshot.docs.forEach(doc => {
                      if(doc.data().user == usuario){
-                         document.getElementById('nome-title').textContent = doc.data().nome
+                         document.getElementById('nome-title').textContent = doc.data().user
                      }
               });
     })
